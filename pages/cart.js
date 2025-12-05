@@ -1,14 +1,14 @@
 import { useCart } from '../context/CartContext'
 import { useState } from 'react'
 import Link from 'next/link'
-import { useSession } from 'next-auth/react'
+import { useAuth } from '../hooks/useAuth'
 
 export default function CartPage() {
   const { items, updateQty, removeFromCart, total, clearCart } = useCart()
   const [loading, setLoading] = useState(false)
   const [showPaymentSuccess, setShowPaymentSuccess] = useState(false)
   const [orderNumber, setOrderNumber] = useState('')
-  const { data: session, status } = useSession()
+  const { user, loading: authLoading } = useAuth()
 
   async function checkout() {
     setLoading(true)
@@ -29,7 +29,7 @@ export default function CartPage() {
     }, 5000)
   }
 
-  if (status === 'loading') {
+  if (authLoading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
@@ -40,7 +40,7 @@ export default function CartPage() {
     )
   }
 
-  if (!session) {
+  if (!user) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center max-w-md">

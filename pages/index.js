@@ -1,15 +1,15 @@
 import useSWR from 'swr'
 import ProductCard from '../components/ProductCard'
-import { useSession } from 'next-auth/react'
+import { useAuth } from '../hooks/useAuth'
 import Link from 'next/link'
 
 const fetcher = (url) => fetch(url).then(r => r.json())
 
 export default function Home() {
-  const { data: session, status } = useSession()
+  const { user, loading } = useAuth()
   const { data: products } = useSWR('/api/products', fetcher)
 
-  if (status === 'loading') {
+  if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
@@ -20,7 +20,7 @@ export default function Home() {
     )
   }
 
-  if (!session) {
+  if (!user) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center max-w-md px-4">

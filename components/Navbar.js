@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { useCart } from '../context/CartContext'
-import { signOut, useSession } from 'next-auth/react'
+import { useAuth } from '../hooks/useAuth'
 import { useState } from 'react'
 
 export default function Navbar() {
   const { items } = useCart()
-  const { data: session } = useSession()
+  const { user, logout } = useAuth()
   const count = items.reduce((s,i) => s + i.qty, 0)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -24,7 +24,7 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-3">
-            {!session && (
+            {!user && (
               <Link 
                 href="/auth/signin" 
                 className="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition text-sm shadow-sm"
@@ -32,13 +32,13 @@ export default function Navbar() {
                 Iniciar Sesión
               </Link>
             )}
-            {session && (
+            {user && (
               <>
                 <span className="text-slate-600 text-sm font-medium max-w-[150px] truncate">
-                  👤 {session.user.name || session.user.email}
+                  👤 {user.name || user.email}
                 </span>
                 <button 
-                  onClick={() => signOut()} 
+                  onClick={logout} 
                   className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition text-sm font-semibold border border-slate-200"
                 >
                   Salir
@@ -90,7 +90,7 @@ export default function Navbar() {
         {/* Mobile Menu Dropdown */}
         {menuOpen && (
           <div className="md:hidden mt-3 pb-2 space-y-2 border-t border-slate-200 pt-3">
-            {!session && (
+            {!user && (
               <Link 
                 href="/auth/signin" 
                 className="block w-full px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition text-center text-sm shadow-sm"
@@ -99,14 +99,14 @@ export default function Navbar() {
                 Iniciar Sesión
               </Link>
             )}
-            {session && (
+            {user && (
               <>
                 <div className="px-4 py-2 text-slate-600 text-sm font-medium bg-slate-100 rounded-lg text-center border border-slate-200">
-                  👤 {session.user.name || session.user.email}
+                  👤 {user.name || user.email}
                 </div>
                 <button 
                   onClick={() => {
-                    signOut()
+                    logout()
                     setMenuOpen(false)
                   }} 
                   className="block w-full px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition text-sm font-semibold border border-slate-200"

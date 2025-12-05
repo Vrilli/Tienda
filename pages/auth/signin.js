@@ -1,5 +1,4 @@
-import { signIn } from 'next-auth/react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 export default function SignIn() {
@@ -11,28 +10,89 @@ export default function SignIn() {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
+  useEffect(() => {
+    // Verificar si ya está logueado
+    const currentUser = localStorage.getItem('currentUser')
+    if (currentUser) {
+      router.push('/')
+    }
+  }, [router])
+
+  function getUsers() {
+    const users = localStorage.getItem('users')
+    return users ? JSON.parse(users) : []
+  }
+
+  function saveUsers(users) {
+    localStorage.setItem('users', JSON.stringify(users))
+  }
+
   async function handleSubmit(e) {
     e.preventDefault()
     setError('')
     setLoading(true)
 
     try {
-      const result = await signIn('credentials', {
-        redirect: false,
-        email,
-        password,
-        name: isRegister ? name : '',
-        isRegister: isRegister.toString()
-      })
+      const users = getUsers()
 
-      if (result?.error) {
-        setError(result.error)
+      if (isRegister) {
+        // Registro
+        const existingUser = users.find(u => u.email === email)
+        if (existingUser) {
+          setError('El usuario ya existe')
+          setLoading(false)
+          return
+        }
+        
+        if (!name || name.trim() === '') {
+          setError('El nombre es requerido')
+          setLoading(false)
+          return
+        }
+        
+        if (password.length < 6) {
+          setError('La contraseña debe tener al menos 6 caracteres')
+          setLoading(false)
+          return
+        }
+        
+        const newUser = { 
+          id: Date.now().toString(), 
+          email, 
+          password, 
+          name: name.trim()
+        }
+        users.push(newUser)
+        saveUsers(users)
+        
+        // Guardar sesión
+        localStorage.setItem('currentUser', JSON.stringify({
+          id: newUser.id,
+          email: newUser.email,
+          name: newUser.name
+        }))
+        
+        router.push('/')
       } else {
+        // Login
+        const user = users.find(u => u.email === email && u.password === password)
+        if (!user) {
+          setError('Email o contraseña incorrectos')
+          setLoading(false)
+          return
+        }
+        
+        // Guardar sesión
+        localStorage.setItem('currentUser', JSON.stringify({
+          id: user.id,
+          email: user.email,
+          name: user.name
+        }))
+        
         router.push('/')
       }
     } catch (err) {
       setError('Ocurrió un error. Intenta de nuevo.')
-    } finally {
       setLoading(false)
     }
   }
