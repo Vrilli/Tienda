@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de Imágenes Placeholder</title>
+</head>
+<body>
+    <h1>Generador de Imágenes para Productos</h1>
+    <p>Usa este script para generar imágenes placeholder con colores atractivos</p>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+        const products = [
+            { name: 'cleanser', color: '#E8F5E9', text: 'Cleanser' },
+            { name: 'cleanser2', color: '#B2DFDB', text: 'Cleanser' },
+            { name: 'cleanser3', color: '#C8E6C9', text: 'Cleanser' },
+            { name: 'cleanser4', color: '#A5D6A7', text: 'Cleanser' },
+            { name: 'cleanser5', color: '#81C784', text: 'Cleanser' },
+            { name: 'cleanser6', color: '#66BB6A', text: 'Cleanser' },
+            { name: 'cleanser7', color: '#4CAF50', text: 'Cleanser' },
+            { name: 'serum', color: '#FFF3E0', text: 'Serum' },
+            { name: 'serum2', color: '#FFE0B2', text: 'Serum' },
+            { name: 'serum3', color: '#FFCC80', text: 'Serum' },
+            { name: 'serum4', color: '#FFB74D', text: 'Serum' },
+            { name: 'moisturizer', color: '#E3F2FD', text: 'Moisturizer' },
+            { name: 'moisturizer2', color: '#BBDEFB', text: 'Moisturizer' },
+            { name: 'moisturizer3', color: '#90CAF9', text: 'Moisturizer' },
+            { name: 'moisturizer4', color: '#64B5F6', text: 'Moisturizer' },
+            { name: 'toner1', color: '#FCE4EC', text: 'Toner' },
+            { name: 'toner2', color: '#F8BBD0', text: 'Toner' },
+            { name: 'exfoliant1', color: '#F3E5F5', text: 'Exfoliant' },
+            { name: 'exfoliant2', color: '#E1BEE7', text: 'Exfoliant' },
+            { name: 'mask1', color: '#EFEBE9', text: 'Mask' },
+            { name: 'mask2', color: '#D7CCC8', text: 'Mask' },
+            { name: 'oil1', color: '#FFF9C4', text: 'Oil' },
+            { name: 'oil2', color: '#FFF59D', text: 'Oil' }
+        ];
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        products.forEach(product => {
+            ctx.fillStyle = product.color;
+            ctx.fillRect(0, 0, 400, 400);
+            
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 32px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(product.text, 200, 200);
+            
+            const link = document.createElement('a');
+            link.download = product.name + '.jpg';
+            link.href = canvas.toDataURL('image/jpeg');
+            link.textContent = 'Descargar ' + product.name;
+            link.style.display = 'block';
+            link.style.margin = '5px';
+            document.body.appendChild(link);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+[
+  {
+    "id": "cleanser-01",
+    "title": "Gentle Hydrating Cleanser",
+    "price": 24.0,
+    "short": "Limpiador suave para todo tipo de piel",
+    "description": "Limpiador facial ultra suave formulado con ácido hialurónico y extracto de aloe vera. Elimina impurezas y maquillaje sin resecar la piel. Su fórmula libre de sulfatos mantiene el equilibrio natural de la piel, dejándola fresca, hidratada y radiante. Ideal para uso diario, mañana y noche.",
+    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg",
+    "ingredients": ["Ácido Hialurónico", "Aloe Vera", "Glicerina", "Agua de Rosas"],
+    "benefits": ["Limpieza profunda", "Hidratación intensa", "No reseca", "Apto para piel sensible"]
+  },
+  {
+    "id": "serum-01",
+    "title": "Vitamin C Brightening Serum",
+    "price": 38.0,
+    "short": "Suero con vitamina C para iluminar la piel",
+    "description": "Suero concentrado con 15% de Vitamina C pura que ilumina, unifica el tono y reduce visiblemente manchas oscuras y signos de envejecimiento. Su fórmula antioxidante protege contra el daño ambiental y estimula la producción de colágeno. Resultados visibles en 2-4 semanas de uso continuo.",
+    "image": "https://images.pexels.com/photos/31251033/pexels-photo-31251033.jpeg?cs=srgb&dl=pexels-n-h-corp-1293047961-31251033.jpg&fm=jpg",
+    "ingredients": ["Vitamina C 15%", "Ácido Ferúlico", "Vitamina E", "Ácido Hialurónico"],
+    "benefits": ["Ilumina la piel", "Reduce manchas", "Antioxidante", "Estimula colágeno"]
+  },
+  {
+    "id": "moisturizer-01",
+    "title": "Daily Moisturizer SPF 30",
+    "price": 32.0,
+    "short": "Hidratante diario con protección solar",
+    "description": "Crema hidratante de textura ligera con protección solar SPF 30 de amplio espectro. Protege contra rayos UVA/UVB mientras hidrata profundamente. Enriquecida con niacinamida y extractos botánicos que mejoran la textura de la piel. No deja residuo blanco y es perfecta como base de maquillaje.",
+    "image": "https://images.pexels.com/photos/6690857/pexels-photo-6690857.jpeg?cs=srgb&dl=pexels-tara-winstead-6690857.jpg&fm=jpg",
+    "ingredients": ["SPF 30", "Niacinamida", "Ácido Hialurónico", "Extracto de Té Verde"],
+    "benefits": ["Protección solar", "Hidratación 24h", "Textura ligera", "No comedogénico"]
+  },
+  {
+    "id": "cleanser-02",
+    "title": "Purifying Gel Cleanser",
+    "price": 22.0,
+    "short": "Gel limpiador purificante",
+    "description": "Elimina impurezas y controla el exceso de grasa sin resecar.",
+    "image": "https://images.pexels.com/photos/14836428/pexels-photo-14836428.jpeg?cs=srgb&dl=pexels-monirathnak-14836428.jpg&fm=jpg"
+  },
+  {
+    "id": "cleanser-03",
+    "title": "Aloe Soothing Cleanser",
+    "price": 20.0,
+    "short": "Limpieza calmante con aloe",
+    "description": "Ideal para piel sensible, calma y suaviza desde el primer uso.",
+    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg"
+  },
+  {
+    "id": "cleanser-04",
+    "title": "Foaming Deep Cleanser",
+    "price": 26.0,
+    "short": "Espuma limpiadora profunda",
+    "description": "Perfecto para eliminar maquillaje y suciedad diaria.",
+    "image": "https://images.pexels.com/photos/14836428/pexels-photo-14836428.jpeg?cs=srgb&dl=pexels-monirathnak-14836428.jpg&fm=jpg"
+  },
+  {
+    "id": "cleanser-05",
+    "title": "Brightening Citrus Cleanser",
+    "price": 25.0,
+    "short": "Limpieza refrescante con vitamina C",
+    "description": "Mejora el tono de la piel y aporta luminosidad.",
+    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg"
+  },
+  {
+    "id": "cleanser-06",
+    "title": "Microfoam Cloud Cleanser",
+    "price": 27.0,
+    "short": "Espuma ligera de limpieza profunda",
+    "description": "Tecnología microfoam para remover impurezas y contaminación.",
+    "image": "https://images.pexels.com/photos/14836428/pexels-photo-14836428.jpeg?cs=srgb&dl=pexels-monirathnak-14836428.jpg&fm=jpg"
+  },
+  {
+    "id": "cleanser-07",
+    "title": "Rice Water Milky Cleanser",
+    "price": 23.0,
+    "short": "Limpieza hidratante a base de agua de arroz",
+    "description": "Deja la piel suave, luminosa y sin sensación tirante.",
+    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg"
+  },
+  {
+    "id": "serum-02",
+    "title": "Hyaluronic Acid 2% Serum",
+    "price": 34.0,
+    "short": "Suero hidratante intensivo",
+    "description": "Rellena la piel y mejora la elasticidad.",
+    "image": "https://images.pexels.com/photos/14920145/pexels-photo-14920145.jpeg?cs=srgb&dl=pexels-luchik-14920145.jpg&fm=jpg"
+  },
+  {
+    "id": "serum-03",
+    "title": "Niacinamide 10% Serum",
+    "price": 30.0,
+    "short": "Control de grasa y reducción de poros",
+    "description": "Mejora textura y controla brillo.",
+    "image": "https://images.pexels.com/photos/31251033/pexels-photo-31251033.jpeg?cs=srgb&dl=pexels-n-h-corp-1293047961-31251033.jpg&fm=jpg"
+  },
+  {
+    "id": "serum-04",
+    "title": "Retinol Renewal Serum",
+    "price": 42.0,
+    "short": "Retinol renovador anti-edad",
+    "description": "Estimula la regeneración celular y reduce arrugas.",
+    "image": "https://images.pexels.com/photos/31251033/pexels-photo-31251033.jpeg?cs=srgb&dl=pexels-n-h-corp-1293047961-31251033.jpg&fm=jpg"
+  },
+  {
+    "id": "moisturizer-02",
+    "title": "Gel Moisturizer Oil-Free",
+    "price": 28.0,
+    "short": "Hidratante en gel libre de aceite",
+    "description": "Ideal para piel grasa o mixta.",
+    "image": "https://images.pexels.com/photos/29611524/pexels-photo-29611524.jpeg?cs=srgb&dl=pexels-madalina-enache-1540051428-29611524.jpg&fm=jpg"
+  },
+  {
+    "id": "moisturizer-03",
+    "title": "Ceramide Barrier Cream",
+    "price": 36.0,
+    "short": "Refuerza la barrera de la piel",
+    "description": "Crema nutritiva con ceramidas esenciales.",
+    "image": "https://images.pexels.com/photos/4841327/pexels-photo-4841327.jpeg?cs=srgb&dl=pexels-misolo-cosmetic-2588316-4841327.jpg&fm=jpg"
+  },
+  {
+    "id": "moisturizer-04",
+    "title": "Ultra Repair Night Cream",
+    "price": 40.0,
+    "short": "Reparadora de noche",
+    "description": "Repara la piel mientras duermes.",
+    "image": "https://images.pexels.com/photos/26733176/pexels-photo-26733176.jpeg?cs=srgb&dl=pexels-vandana-vankhede-322740014-26733176.jpg&fm=jpg"
+  },
+  {
+    "id": "toner-01",
+    "title": "Rose Water Calming Toner",
+    "price": 18.0,
+    "short": "Tónico calmante con agua de rosas",
+    "description": "Equilibra el pH y suaviza la piel.",
+    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg"
+  },
+  {
+    "id": "toner-02",
+    "title": "AHA Exfoliating Toner",
+    "price": 22.0,
+    "short": "Tónico exfoliante con AHA",
+    "description": "Mejora textura y luminosidad.",
+    "image": "https://images.pexels.com/photos/14836428/pexels-photo-14836428.jpeg?cs=srgb&dl=pexels-monirathnak-14836428.jpg&fm=jpg"
+  },
+  {
+    "id": "exfoliant-01",
+    "title": "BHA Pore Clearing Exfoliant",
+    "price": 29.0,
+    "short": "Exfoliante químico con BHA",
+    "description": "Limpia poros y reduce puntos negros.",
+    "image": "https://images.pexels.com/photos/31251033/pexels-photo-31251033.jpeg?cs=srgb&dl=pexels-n-h-corp-1293047961-31251033.jpg&fm=jpg"
+  },
+  {
+    "id": "exfoliant-02",
+    "title": "Gentle Enzyme Exfoliant",
+    "price": 27.0,
+    "short": "Exfoliante enzimático suave",
+    "description": "Ideal para piel sensible.",
+    "image": "https://images.pexels.com/photos/6690857/pexels-photo-6690857.jpeg?cs=srgb&dl=pexels-tara-winstead-6690857.jpg&fm=jpg"
+  },
+  {
+    "id": "mask-01",
+    "title": "Clay Detox Mask",
+    "price": 26.0,
+    "short": "Mascarilla detox de arcilla",
+    "description": "Controla brillo y purifica la piel.",
+    "image": "https://images.pexels.com/photos/4841327/pexels-photo-4841327.jpeg?cs=srgb&dl=pexels-misolo-cosmetic-2588316-4841327.jpg&fm=jpg"
+  },
+  {
+    "id": "mask-02",
+    "title": "Hydrating Overnight Mask",
+    "price": 32.0,
+    "short": "Mascarilla hidratante nocturna",
+    "description": "Recupera hidratación mientras duermes.",
+    "image": "https://images.pexels.com/photos/26733176/pexels-photo-26733176.jpeg?cs=srgb&dl=pexels-vandana-vankhede-322740014-26733176.jpg&fm=jpg"
+  },
+  {
+    "id": "oil-01",
+    "title": "Rosehip Regenerating Oil",
+    "price": 35.0,
+    "short": "Aceite regenerante de rosa mosqueta",
+    "description": "Reduce cicatrices y mejora textura.",
+    "image": "https://images.pexels.com/photos/8076097/pexels-photo-8076097.jpeg?cs=srgb&dl=pexels-mart-production-8076097.jpg&fm=jpg"
+  },
+  {
+    "id": "oil-02",
+    "title": "Squalane Lightweight Oil",
+    "price": 33.0,
+    "short": "Aceite ligero de escualano",
+    "description": "Hidratación profunda sin sensación grasa.",
+    "image": "https://images.pexels.com/photos/8076097/pexels-photo-8076097.jpeg?cs=srgb&dl=pexels-mart-production-8076097.jpg&fm=jpg"
+  }
+]

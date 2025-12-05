@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generar Imágenes de Productos</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #7c3aed; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { background: white; border-radius: 12px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        canvas { width: 100%; border-radius: 8px; cursor: pointer; }
+        .title { font-weight: bold; margin: 10px 0 5px; font-size: 14px; }
+        .price { color: #7c3aed; font-weight: bold; }
+        button { background: #7c3aed; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; margin-top: 10px; width: 100%; }
+        button:hover { background: #6d28d9; }
+        .info { background: #e0e7ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Generador de Imágenes - Skincare Studio</h1>
+        <div class="info">
+            <strong>Instrucciones:</strong> Haz clic derecho en cada imagen → "Guardar imagen como..." → Guarda con el nombre exacto que aparece debajo de cada imagen en la carpeta <code>public/images/</code>
+        </div>
+        <div class="grid" id="imageGrid"></div>
+    </div>
+
+    <script>
+        const products = [
+            { name: 'cleanser.jpg', title: 'Gentle Hydrating Cleanser', price: '$24.00', color: '#a7c7e7', icon: '🧴' },
+            { name: 'cleanser2.jpg', title: 'Purifying Gel Cleanser', price: '$22.00', color: '#b8d4e8', icon: '🧴' },
+            { name: 'cleanser3.jpg', title: 'Aloe Soothing Cleanser', price: '$20.00', color: '#c9e1e9', icon: '🧴' },
+            { name: 'cleanser4.jpg', title: 'Foaming Deep Cleanser', price: '$26.00', color: '#a0c4d9', icon: '🧴' },
+            { name: 'cleanser5.jpg', title: 'Brightening Citrus Cleanser', price: '$25.00', color: '#ffd89b', icon: '🍊' },
+            { name: 'cleanser6.jpg', title: 'Microfoam Cloud Cleanser', price: '$27.00', color: '#e8f4f8', icon: '☁️' },
+            { name: 'cleanser7.jpg', title: 'Rice Water Milky Cleanser', price: '$23.00', color: '#f5f0e8', icon: '🌾' },
+            
+            { name: 'serum.jpg', title: 'Vitamin C Brightening Serum', price: '$38.00', color: '#ffb347', icon: '💧' },
+            { name: 'serum2.jpg', title: 'Hyaluronic Acid 2% Serum', price: '$34.00', color: '#b3d9ff', icon: '💧' },
+            { name: 'serum3.jpg', title: 'Niacinamide 10% Serum', price: '$30.00', color: '#d4a5d4', icon: '💧' },
+            { name: 'serum4.jpg', title: 'Retinol Renewal Serum', price: '$42.00', color: '#ffd700', icon: '✨' },
+            
+            { name: 'moisturizer.jpg', title: 'Daily Moisturizer SPF 30', price: '$32.00', color: '#ffe4b5', icon: '☀️' },
+            { name: 'moisturizer2.jpg', title: 'Gel Moisturizer Oil-Free', price: '$28.00', color: '#b0e0e6', icon: '💦' },
+            { name: 'moisturizer3.jpg', title: 'Ceramide Barrier Cream', price: '$36.00', color: '#f0e6d2', icon: '🛡️' },
+            { name: 'moisturizer4.jpg', title: 'Ultra Repair Night Cream', price: '$40.00', color: '#c8b8db', icon: '🌙' },
+            
+            { name: 'toner1.jpg', title: 'Rose Water Calming Toner', price: '$18.00', color: '#ffb6c1', icon: '🌹' },
+            { name: 'toner2.jpg', title: 'AHA Exfoliating Toner', price: '$22.00', color: '#ffa07a', icon: '✨' },
+            
+            { name: 'exfoliant1.jpg', title: 'BHA Pore Clearing Exfoliant', price: '$29.00', color: '#98d8c8', icon: '🔬' },
+            { name: 'exfoliant2.jpg', title: 'Gentle Enzyme Exfoliant', price: '$27.00', color: '#f7dc6f', icon: '🍍' },
+            
+            { name: 'mask1.jpg', title: 'Clay Detox Mask', price: '$26.00', color: '#d2b48c', icon: '🎭' },
+            { name: 'mask2.jpg', title: 'Hydrating Overnight Mask', price: '$32.00', color: '#b0c4de', icon: '😴' },
+            
+            { name: 'oil1.jpg', title: 'Rosehip Regenerating Oil', price: '$35.00', color: '#e6a8a8', icon: '🌺' },
+            { name: 'oil2.jpg', title: 'Squalane Lightweight Oil', price: '$33.00', color: '#f5deb3', icon: '✨' }
+        ];
+
+        const grid = document.getElementById('imageGrid');
+
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 400;
+            const ctx = canvas.getContext('2d');
+            
+            // Fondo degradado
+            const gradient = ctx.createLinearGradient(0, 0, 400, 400);
+            gradient.addColorStop(0, product.color);
+            gradient.addColorStop(1, adjustColor(product.color, -20));
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 400);
+            
+            // Círculos decorativos
+            ctx.globalAlpha = 0.1;
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(100, 100, 80, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(320, 300, 100, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1;
+            
+            // Icono grande
+            ctx.font = 'bold 120px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = 'rgba(255,255,255,0.9)';
+            ctx.fillText(product.icon, 200, 200);
+            
+            // Texto del producto
+            ctx.font = 'bold 24px Arial';
+            ctx.fillStyle = 'rgba(0,0,0,0.7)';
+            ctx.fillText(product.price, 200, 340);
+            
+            card.appendChild(canvas);
+            
+            const title = document.createElement('div');
+            title.className = 'title';
+            title.textContent = product.title;
+            card.appendChild(title);
+            
+            const filename = document.createElement('div');
+            filename.style.fontSize = '12px';
+            filename.style.color = '#666';
+            filename.textContent = 'Archivo: ' + product.name;
+            card.appendChild(filename);
+            
+            const btn = document.createElement('button');
+            btn.textContent = 'Descargar ' + product.name;
+            btn.onclick = () => {
+                const link = document.createElement('a');
+                link.download = product.name;
+                link.href = canvas.toDataURL('image/jpeg', 0.9);
+                link.click();
+            };
+            card.appendChild(btn);
+            
+            grid.appendChild(card);
+        });
+
+        function adjustColor(color, amount) {
+            const num = parseInt(color.replace('#', ''), 16);
+            const r = Math.max(0, Math.min(255, (num >> 16) + amount));
+            const g = Math.max(0, Math.min(255, ((num >> 8) & 0x00FF) + amount));
+            const b = Math.max(0, Math.min(255, (num & 0x0000FF) + amount));
+            return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
+        }
+    </script>
+</body>
+</html>
