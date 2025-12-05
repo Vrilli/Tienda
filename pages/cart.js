@@ -53,7 +53,7 @@ export default function CartPage() {
             href="/auth/signin" 
             className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transition shadow-lg"
           >
-            Iniciar Sesión / Registrarse
+            Iniciar Sesión
           </Link>
         </div>
       </div>

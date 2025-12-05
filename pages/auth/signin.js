@@ -182,7 +182,7 @@ export default function SignIn() {
           </button>
         </form>
 
-        <div className="mt-6 pt-6 border-t border-slate-200 text-center">
+        {/* <div className="mt-6 pt-6 border-t border-slate-200 text-center">
           <button
             onClick={() => {
               setIsRegister(!isRegister)
@@ -195,7 +195,7 @@ export default function SignIn() {
           >
             {isRegister ? '¿Ya tienes cuenta? Inicia sesión' : '¿No tienes cuenta? Regístrate'}
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   )
