@@ -1,22 +1,18 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { promises as fs } from 'fs'
-import path from 'path'
 
-// Archivo para persistir usuarios
-const usersFile = path.join(process.cwd(), 'data', 'users.json')
+// Usuarios en memoria (se reinician al reiniciar el servidor)
+let usersInMemory = [
+  { id: "1", email: "ana@gmail.com", password: "123456", name: "ana" },
+  { id: "2", email: "pedro@gmail.com", password: "12345679", name: "pedro" }
+]
 
-async function getUsers() {
-  try {
-    const content = await fs.readFile(usersFile, 'utf8')
-    return JSON.parse(content)
-  } catch {
-    return []
-  }
+function getUsers() {
+  return usersInMemory
 }
 
-async function saveUsers(users) {
-  await fs.writeFile(usersFile, JSON.stringify(users, null, 2))
+function saveUsers(users) {
+  usersInMemory = users
 }
 
 export const authOptions = {
@@ -31,7 +27,7 @@ export const authOptions = {
       },
       async authorize(credentials) {
         const { email, password, name, isRegister } = credentials
-        const users = await getUsers()
+        const users = getUsers()
 
         if (isRegister === 'true') {
           // Registro
@@ -55,7 +51,7 @@ export const authOptions = {
             name: name.trim()
           }
           users.push(newUser)
-          await saveUsers(users)
+          saveUsers(users)
           return { id: newUser.id, email: newUser.email, name: newUser.name }
         } else {
           // Login
