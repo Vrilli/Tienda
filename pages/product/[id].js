@@ -3,7 +3,7 @@ import { useCart } from '../../context/CartContext'
 import products from '../../data/products.json'
 import Link from 'next/link'
 import { useState } from 'react'
-import { useSession } from 'next-auth/react'
+import { useAuth } from '../../hooks/useAuth'
 
 export default function ProductPage() {
   const router = useRouter()
@@ -12,9 +12,9 @@ export default function ProductPage() {
   const { addToCart } = useCart()
   const [quantity, setQuantity] = useState(1)
   const [showSuccess, setShowSuccess] = useState(false)
-  const { data: session, status } = useSession()
+  const { user, loading } = useAuth()
 
-  if (status === 'loading') {
+  if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
@@ -25,7 +25,7 @@ export default function ProductPage() {
     )
   }
 
-  if (!session) {
+  if (!user) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center max-w-md px-4">
