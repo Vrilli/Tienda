@@ -6,11 +6,38 @@ export function useAuth() {
 
   useEffect(() => {
     // Cargar usuario del localStorage
-    const currentUser = localStorage.getItem('currentUser')
-    if (currentUser) {
-      setUser(JSON.parse(currentUser))
+    const loadUser = () => {
+      const currentUser = localStorage.getItem('currentUser')
+      if (currentUser) {
+        try {
+          setUser(JSON.parse(currentUser))
+        } catch (e) {
+          console.error('Error parsing user:', e)
+          localStorage.removeItem('currentUser')
+        }
+      }
+      setLoading(false)
     }
-    setLoading(false)
+
+    loadUser()
+
+    // Escuchar cambios en localStorage (para sincronizar entre pestañas)
+    const handleStorageChange = (e) => {
+      if (e.key === 'currentUser') {
+        if (e.newValue) {
+          try {
+            setUser(JSON.parse(e.newValue))
+          } catch (err) {
+            setUser(null)
+          }
+        } else {
+          setUser(null)
+        }
+      }
+    }
+
+    window.addEventListener('storage', handleStorageChange)
+    return () => window.removeEventListener('storage', handleStorageChange)
   }, [])
 
   const logout = () => {

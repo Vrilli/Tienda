@@ -16,6 +16,17 @@ export default function SignIn() {
     if (currentUser) {
       router.push('/')
     }
+
+    // Inicializar usuarios de prueba si no existen
+    const users = localStorage.getItem('users')
+    if (!users) {
+      const defaultUsers = [
+        { id: "1", email: "ana@gmail.com", password: "123456", name: "Ana" },
+        { id: "2", email: "pedro@gmail.com", password: "123456", name: "Pedro" },
+        { id: "3", email: "test@test.com", password: "123456", name: "Test User" }
+      ]
+      localStorage.setItem('users', JSON.stringify(defaultUsers))
+    }
   }, [router])
 
   function getUsers() {
@@ -72,7 +83,8 @@ export default function SignIn() {
           name: newUser.name
         }))
         
-        router.push('/')
+        // Redirigir con recarga para actualizar el estado
+        window.location.href = '/'
       } else {
         // Login
         const user = users.find(u => u.email === email && u.password === password)
@@ -89,7 +101,8 @@ export default function SignIn() {
           name: user.name
         }))
         
-        router.push('/')
+        // Redirigir con recarga para actualizar el estado
+        window.location.href = '/'
       }
     } catch (err) {
       setError('Ocurrió un error. Intenta de nuevo.')
@@ -182,8 +195,9 @@ export default function SignIn() {
           </button>
         </form>
 
-        {/* <div className="mt-6 pt-6 border-t border-slate-200 text-center">
+        <div className="mt-6 pt-6 border-t border-slate-200 text-center">
           <button
+            type="button"
             onClick={() => {
               setIsRegister(!isRegister)
               setError('')
@@ -195,7 +209,19 @@ export default function SignIn() {
           >
             {isRegister ? '¿Ya tienes cuenta? Inicia sesión' : '¿No tienes cuenta? Regístrate'}
           </button>
-        </div> */}
+        </div>
+
+        {/* Usuarios de prueba */}
+        {!isRegister && (
+          <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <p className="text-xs text-blue-800 font-semibold mb-2">👤 Usuarios de prueba:</p>
+            <div className="text-xs text-blue-700 space-y-1">
+              <p>📧 ana@gmail.com / 123456</p>
+              <p>📧 pedro@gmail.com / 123456</p>
+              <p>📧 test@test.com / 123456</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
