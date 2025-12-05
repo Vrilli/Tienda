@@ -42,9 +42,13 @@ export default function Home() {
 
   return (
     <div>
-      <header className="mb-8 text-center py-4">
-        <p className="text-xl text-gray-600">Productos naturales y efectivos para tu piel</p>
-        <p className="text-gray-500 mt-1">Descubre nuestra colección de cuidado facial premium</p>
+      <header className="mb-12 text-center py-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-3 flex items-center justify-center gap-3">
+          <span className="text-blue-600">⚡</span>
+          Tecnología de Última Generación
+        </h1>
+        <p className="text-xl text-slate-600">Los mejores productos tech al mejor precio</p>
+        <p className="text-slate-500 mt-2">Envío gratis en compras mayores a $100</p>
       </header>
 
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

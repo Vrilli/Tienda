@@ -7,9 +7,9 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
   return (
     <SessionProvider session={session}>
       <CartProvider>
-        <div className="min-h-screen flex flex-col bg-gray-50">
+        <div className="min-h-screen flex flex-col bg-slate-50">
           <Navbar />
-          <main className="flex-1 container mx-auto px-4 py-8 bg-white">
+          <main className="flex-1 container mx-auto px-4 py-8">
             <Component {...pageProps} />
           </main>
         </div>
@@ -32,6 +32,18 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
           }
           .animate-bounce-in {
             animation: bounce-in 0.6s ease-out;
+          }
+          
+          @keyframes glow {
+            0%, 100% {
+              box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+            }
+            50% {
+              box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+            }
+          }
+          .animate-glow {
+            animation: glow 2s ease-in-out infinite;
           }
         `}</style>
       </CartProvider>

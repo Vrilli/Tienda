@@ -1,192 +1,222 @@
 [
   {
     "id": "cleanser-01",
-    "title": "Gentle Hydrating Cleanser",
+    "title": "Ultrabook 14\" Pro",
     "price": 24.0,
-    "short": "Limpiador suave para todo tipo de piel",
-    "description": "Limpiador facial ultra suave formulado con ácido hialurónico y extracto de aloe vera. Elimina impurezas y maquillaje sin resecar la piel. Su fórmula libre de sulfatos mantiene el equilibrio natural de la piel, dejándola fresca, hidratada y radiante. Ideal para uso diario, mañana y noche.",
-    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg",
-    "ingredients": ["Ácido Hialurónico", "Aloe Vera", "Glicerina", "Agua de Rosas"],
-    "benefits": ["Limpieza profunda", "Hidratación intensa", "No reseca", "Apto para piel sensible"]
+    "short": "Laptop ligera para trabajo y estudio",
+    "description": "Ultrabook de 14\" con diseño delgado y peso ligero, ideal para trabajo remoto y estudio. Incluye procesador de última generación, almacenamiento SSD y batería de larga duración para acompañarte todo el día.",
+    "image": "https://images.pexels.com/photos/28454825/pexels-photo-28454825.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-28454825.jpg&fm=jpg",
+    "ingredients": [
+      "Intel Core i7 de 13ª generación",
+      "16 GB de memoria RAM",
+      "SSD NVMe de 512 GB",
+      "Pantalla 14\" Full HD"
+    ],
+    "benefits": [
+      "Ultraportátil y ligera",
+      "Batería de hasta 10 horas",
+      "Ideal para teletrabajo y estudio",
+      "Arranque y carga de apps muy rápidos"
+    ]
   },
   {
     "id": "serum-01",
-    "title": "Vitamin C Brightening Serum",
+    "title": "Monitor IPS 27\" 144Hz",
     "price": 38.0,
-    "short": "Suero con vitamina C para iluminar la piel",
-    "description": "Suero concentrado con 15% de Vitamina C pura que ilumina, unifica el tono y reduce visiblemente manchas oscuras y signos de envejecimiento. Su fórmula antioxidante protege contra el daño ambiental y estimula la producción de colágeno. Resultados visibles en 2-4 semanas de uso continuo.",
-    "image": "https://images.pexels.com/photos/31251033/pexels-photo-31251033.jpeg?cs=srgb&dl=pexels-n-h-corp-1293047961-31251033.jpg&fm=jpg",
-    "ingredients": ["Vitamina C 15%", "Ácido Ferúlico", "Vitamina E", "Ácido Hialurónico"],
-    "benefits": ["Ilumina la piel", "Reduce manchas", "Antioxidante", "Estimula colágeno"]
+    "short": "Monitor para diseño, trabajo y gaming fluido",
+    "description": "Monitor de 27\" con panel IPS, alta tasa de refresco y marcos delgados. Perfecto para diseño, multitarea y videojuegos gracias a su buena reproducción de color y fluidez.",
+    "image": "https://images.pexels.com/photos/20263137/pexels-photo-20263137.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-20263137.jpg&fm=jpg",
+    "ingredients": [
+      "Panel IPS de 27\"",
+      "Resolución QHD 2560x1440",
+      "144 Hz de tasa de refresco",
+      "Compatibilidad FreeSync/G-Sync"
+    ],
+    "benefits": [
+      "Colores más precisos y uniformes",
+      "Imagen fluida para gaming",
+      "Marcos delgados para setups multi-monitor",
+      "Ajuste de altura e inclinación"
+    ]
   },
   {
     "id": "moisturizer-01",
-    "title": "Daily Moisturizer SPF 30",
+    "title": "Teclado Mecánico RGB",
     "price": 32.0,
-    "short": "Hidratante diario con protección solar",
-    "description": "Crema hidratante de textura ligera con protección solar SPF 30 de amplio espectro. Protege contra rayos UVA/UVB mientras hidrata profundamente. Enriquecida con niacinamida y extractos botánicos que mejoran la textura de la piel. No deja residuo blanco y es perfecta como base de maquillaje.",
-    "image": "https://images.pexels.com/photos/6690857/pexels-photo-6690857.jpeg?cs=srgb&dl=pexels-tara-winstead-6690857.jpg&fm=jpg",
-    "ingredients": ["SPF 30", "Niacinamida", "Ácido Hialurónico", "Extracto de Té Verde"],
-    "benefits": ["Protección solar", "Hidratación 24h", "Textura ligera", "No comedogénico"]
+    "short": "Teclado mecánico compacto con iluminación RGB",
+    "description": "Teclado mecánico con switches silenciosos y retroiluminación RGB personalizable. Ideal para quienes escriben mucho o juegan y buscan una experiencia cómoda y duradera.",
+    "image": "https://images.pexels.com/photos/28454825/pexels-photo-28454825.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-28454825.jpg&fm=jpg",
+    "ingredients": [
+      "Switches mecánicos lineales",
+      "Retroiluminación RGB por tecla",
+      "Construcción en aluminio",
+      "Cable USB-C desmontable"
+    ],
+    "benefits": [
+      "Escritura cómoda y precisa",
+      "Efectos de luz personalizables",
+      "Durabilidad para miles de pulsaciones",
+      "Formato compacto para ahorrar espacio"
+    ]
   },
   {
     "id": "cleanser-02",
-    "title": "Purifying Gel Cleanser",
+    "title": "Mouse Inalámbrico Ergonómico",
     "price": 22.0,
-    "short": "Gel limpiador purificante",
-    "description": "Elimina impurezas y controla el exceso de grasa sin resecar.",
-    "image": "https://images.pexels.com/photos/14836428/pexels-photo-14836428.jpeg?cs=srgb&dl=pexels-monirathnak-14836428.jpg&fm=jpg"
+    "short": "Ratón inalámbrico cómodo para todo el día",
+    "description": "Mouse inalámbrico ergonómico con sensor preciso, pensado para largas jornadas frente al computador. Ideal para oficina, estudio y trabajo remoto.",
+    "image": "https://images.pexels.com/photos/28454825/pexels-photo-28454825.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-28454825.jpg&fm=jpg"
   },
   {
     "id": "cleanser-03",
-    "title": "Aloe Soothing Cleanser",
+    "title": "Base Ajustable para Laptop",
     "price": 20.0,
-    "short": "Limpieza calmante con aloe",
-    "description": "Ideal para piel sensible, calma y suaviza desde el primer uso.",
-    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg"
+    "short": "Soporte ajustable para mejorar la postura",
+    "description": "Soporte para portátil con altura regulable que ayuda a mantener una postura más saludable. Mejora la ventilación del equipo y libera espacio en el escritorio.",
+    "image": "https://images.pexels.com/photos/4930091/pexels-photo-4930091.jpeg?cs=srgb&dl=pexels-diimejii-4930091.jpg&fm=jpg"
   },
   {
     "id": "cleanser-04",
-    "title": "Foaming Deep Cleanser",
+    "title": "Hub USB-C 7 en 1",
     "price": 26.0,
-    "short": "Espuma limpiadora profunda",
-    "description": "Perfecto para eliminar maquillaje y suciedad diaria.",
-    "image": "https://images.pexels.com/photos/14836428/pexels-photo-14836428.jpeg?cs=srgb&dl=pexels-monirathnak-14836428.jpg&fm=jpg"
+    "short": "Expansor de puertos para portátiles modernos",
+    "description": "Hub USB-C con múltiples puertos: USB 3.0, HDMI, lector de tarjetas y más. Perfecto para conectar monitores, memorias USB y periféricos a tu laptop.",
+    "image": "https://images.pexels.com/photos/3921704/pexels-photo-3921704.jpeg?cs=srgb&dl=pexels-readymade-3921704.jpg&fm=jpg"
   },
   {
     "id": "cleanser-05",
-    "title": "Brightening Citrus Cleanser",
+    "title": "Router WiFi 6 Doble Banda",
     "price": 25.0,
-    "short": "Limpieza refrescante con vitamina C",
-    "description": "Mejora el tono de la piel y aporta luminosidad.",
-    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg"
+    "short": "Router moderno para hogar u oficina",
+    "description": "Router WiFi 6 con doble banda para mejorar la cobertura y estabilidad de tu red. Ideal para videollamadas, clases virtuales y streaming en varios dispositivos.",
+    "image": "https://images.pexels.com/photos/32698507/pexels-photo-32698507.jpeg?cs=srgb&dl=pexels-userpascal-32698507.jpg&fm=jpg"
   },
   {
     "id": "cleanser-06",
-    "title": "Microfoam Cloud Cleanser",
+    "title": "SSD Externo 1TB USB-C",
     "price": 27.0,
-    "short": "Espuma ligera de limpieza profunda",
-    "description": "Tecnología microfoam para remover impurezas y contaminación.",
-    "image": "https://images.pexels.com/photos/14836428/pexels-photo-14836428.jpeg?cs=srgb&dl=pexels-monirathnak-14836428.jpg&fm=jpg"
+    "short": "Almacenamiento portátil de alta velocidad",
+    "description": "Unidad de estado sólido externa de 1TB con conexión USB-C. Ofrece velocidades de transferencia muy rápidas para copias de seguridad y transporte de archivos pesados.",
+    "image": "https://images.pexels.com/photos/13595074/pexels-photo-13595074.jpeg?cs=srgb&dl=pexels-avinash-kumar-299518778-13595074.jpg&fm=jpg"
   },
   {
     "id": "cleanser-07",
-    "title": "Rice Water Milky Cleanser",
+    "title": "Disco Duro Externo 2TB",
     "price": 23.0,
-    "short": "Limpieza hidratante a base de agua de arroz",
-    "description": "Deja la piel suave, luminosa y sin sensación tirante.",
-    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg"
+    "short": "Almacenamiento masivo para tus proyectos",
+    "description": "Disco duro externo de 2TB ideal para respaldar clases, videos, proyectos y fotografías. Con carcasa resistente y fácil de transportar.",
+    "image": "https://images.pexels.com/photos/13595074/pexels-photo-13595074.jpeg?cs=srgb&dl=pexels-avinash-kumar-299518778-13595074.jpg&fm=jpg"
   },
   {
     "id": "serum-02",
-    "title": "Hyaluronic Acid 2% Serum",
+    "title": "Audífonos Bluetooth Over-Ear",
     "price": 34.0,
-    "short": "Suero hidratante intensivo",
-    "description": "Rellena la piel y mejora la elasticidad.",
-    "image": "https://images.pexels.com/photos/14920145/pexels-photo-14920145.jpeg?cs=srgb&dl=pexels-luchik-14920145.jpg&fm=jpg"
+    "short": "Sonido envolvente para música y videollamadas",
+    "description": "Audífonos over-ear inalámbricos con buena cancelación pasiva del ruido. Cómodos para usarlos durante horas en reuniones, clases o entretenimiento.",
+    "image": "https://images.pexels.com/photos/1037996/pexels-photo-1037996.jpeg?cs=srgb&dl=pexels-moose-photos-170195-1037996.jpg&fm=jpg"
   },
   {
     "id": "serum-03",
-    "title": "Niacinamide 10% Serum",
+    "title": "Auriculares In-Ear con Cancelación de Ruido",
     "price": 30.0,
-    "short": "Control de grasa y reducción de poros",
-    "description": "Mejora textura y controla brillo.",
-    "image": "https://images.pexels.com/photos/31251033/pexels-photo-31251033.jpeg?cs=srgb&dl=pexels-n-h-corp-1293047961-31251033.jpg&fm=jpg"
+    "short": "Audífonos compactos para uso diario",
+    "description": "Auriculares in-ear con cancelación activa de ruido, estuche de carga y controles táctiles. Ideales para desplazamientos, estudio y reuniones en movimiento.",
+    "image": "https://images.pexels.com/photos/1037996/pexels-photo-1037996.jpeg?cs=srgb&dl=pexels-moose-photos-170195-1037996.jpg&fm=jpg"
   },
   {
     "id": "serum-04",
-    "title": "Retinol Renewal Serum",
+    "title": "Micrófono Condensador USB",
     "price": 42.0,
-    "short": "Retinol renovador anti-edad",
-    "description": "Estimula la regeneración celular y reduce arrugas.",
-    "image": "https://images.pexels.com/photos/31251033/pexels-photo-31251033.jpeg?cs=srgb&dl=pexels-n-h-corp-1293047961-31251033.jpg&fm=jpg"
+    "short": "Micrófono para clases, podcasts y streaming",
+    "description": "Micrófono condensador con conexión USB, compatible con PC y laptop. Ofrece audio claro para videollamadas, grabación de clases y contenido digital.",
+    "image": "https://images.pexels.com/photos/20263137/pexels-photo-20263137.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-20263137.jpg&fm=jpg"
   },
   {
     "id": "moisturizer-02",
-    "title": "Gel Moisturizer Oil-Free",
+    "title": "Webcam Full HD 1080p",
     "price": 28.0,
-    "short": "Hidratante en gel libre de aceite",
-    "description": "Ideal para piel grasa o mixta.",
-    "image": "https://images.pexels.com/photos/29611524/pexels-photo-29611524.jpeg?cs=srgb&dl=pexels-madalina-enache-1540051428-29611524.jpg&fm=jpg"
+    "short": "Cámara para videollamadas nítidas",
+    "description": "Webcam con resolución Full HD, micrófono integrado y clip ajustable. Perfecta para clases virtuales, reuniones en línea y transmisiones en vivo.",
+    "image": "https://images.pexels.com/photos/20263137/pexels-photo-20263137.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-20263137.jpg&fm=jpg"
   },
   {
     "id": "moisturizer-03",
-    "title": "Ceramide Barrier Cream",
+    "title": "Bocina Bluetooth Portátil",
     "price": 36.0,
-    "short": "Refuerza la barrera de la piel",
-    "description": "Crema nutritiva con ceramidas esenciales.",
-    "image": "https://images.pexels.com/photos/4841327/pexels-photo-4841327.jpeg?cs=srgb&dl=pexels-misolo-cosmetic-2588316-4841327.jpg&fm=jpg"
+    "short": "Altavoz compacto con gran sonido",
+    "description": "Parlante Bluetooth con buena potencia y autonomía. Ideal para escuchar música mientras trabajas o para ambientar espacios pequeños.",
+    "image": "https://images.pexels.com/photos/4930091/pexels-photo-4930091.jpeg?cs=srgb&dl=pexels-diimejii-4930091.jpg&fm=jpg"
   },
   {
     "id": "moisturizer-04",
-    "title": "Ultra Repair Night Cream",
+    "title": "Cargador Rápido 65W USB-C",
     "price": 40.0,
-    "short": "Reparadora de noche",
-    "description": "Repara la piel mientras duermes.",
-    "image": "https://images.pexels.com/photos/26733176/pexels-photo-26733176.jpeg?cs=srgb&dl=pexels-vandana-vankhede-322740014-26733176.jpg&fm=jpg"
+    "short": "Cargador compacto para laptop y móvil",
+    "description": "Cargador rápido de 65W con tecnología USB-C compatible con múltiples marcas. Permite cargar laptops ultrabook, tablets y smartphones con un solo adaptador.",
+    "image": "https://images.pexels.com/photos/3921704/pexels-photo-3921704.jpeg?cs=srgb&dl=pexels-readymade-3921704.jpg&fm=jpg"
   },
   {
     "id": "toner-01",
-    "title": "Rose Water Calming Toner",
+    "title": "Power Bank 20 000 mAh",
     "price": 18.0,
-    "short": "Tónico calmante con agua de rosas",
-    "description": "Equilibra el pH y suaviza la piel.",
-    "image": "https://images.pexels.com/photos/6689393/pexels-photo-6689393.jpeg?cs=srgb&dl=pexels-janakukebal-6689393.jpg&fm=jpg"
+    "short": "Batería externa de alta capacidad",
+    "description": "Power bank compacto de 20 000 mAh con salida rápida. Ideal para viajes, jornadas largas o emergencias donde no haya enchufes cerca.",
+    "image": "https://images.pexels.com/photos/3921704/pexels-photo-3921704.jpeg?cs=srgb&dl=pexels-readymade-3921704.jpg&fm=jpg"
   },
   {
     "id": "toner-02",
-    "title": "AHA Exfoliating Toner",
+    "title": "Smartwatch Deportivo",
     "price": 22.0,
-    "short": "Tónico exfoliante con AHA",
-    "description": "Mejora textura y luminosidad.",
-    "image": "https://images.pexels.com/photos/14836428/pexels-photo-14836428.jpeg?cs=srgb&dl=pexels-monirathnak-14836428.jpg&fm=jpg"
+    "short": "Reloj inteligente con monitoreo de salud",
+    "description": "Smartwatch con monitoreo de pasos, ritmo cardíaco y notificaciones del teléfono. Acompaña tu día a día y tus entrenamientos.",
+    "image": "https://images.pexels.com/photos/18078983/pexels-photo-18078983.jpeg?cs=srgb&dl=pexels-badun-18078983.jpg&fm=jpg"
   },
   {
     "id": "exfoliant-01",
-    "title": "BHA Pore Clearing Exfoliant",
+    "title": "Tablet 11\" Android",
     "price": 29.0,
-    "short": "Exfoliante químico con BHA",
-    "description": "Limpia poros y reduce puntos negros.",
-    "image": "https://images.pexels.com/photos/31251033/pexels-photo-31251033.jpeg?cs=srgb&dl=pexels-n-h-corp-1293047961-31251033.jpg&fm=jpg"
+    "short": "Tablet para consumo de contenido y notas",
+    "description": "Tablet de 11\" ideal para leer, tomar apuntes y consumir vídeo. Perfecta como compañera ligera para clase o reuniones.",
+    "image": "https://images.pexels.com/photos/28454825/pexels-photo-28454825.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-28454825.jpg&fm=jpg"
   },
   {
     "id": "exfoliant-02",
-    "title": "Gentle Enzyme Exfoliant",
+    "title": "Monitor Portátil 15.6\"",
     "price": 27.0,
-    "short": "Exfoliante enzimático suave",
-    "description": "Ideal para piel sensible.",
-    "image": "https://images.pexels.com/photos/6690857/pexels-photo-6690857.jpeg?cs=srgb&dl=pexels-tara-winstead-6690857.jpg&fm=jpg"
+    "short": "Pantalla extra para laptop o consola",
+    "description": "Monitor portátil ligero que se conecta por USB-C o HDMI. Añade una segunda pantalla para mejorar tu productividad o jugar en cualquier lugar.",
+    "image": "https://images.pexels.com/photos/4930091/pexels-photo-4930091.jpeg?cs=srgb&dl=pexels-diimejii-4930091.jpg&fm=jpg"
   },
   {
     "id": "mask-01",
-    "title": "Clay Detox Mask",
+    "title": "Silla Ergonómica de Oficina",
     "price": 26.0,
-    "short": "Mascarilla detox de arcilla",
-    "description": "Controla brillo y purifica la piel.",
-    "image": "https://images.pexels.com/photos/4841327/pexels-photo-4841327.jpeg?cs=srgb&dl=pexels-misolo-cosmetic-2588316-4841327.jpg&fm=jpg"
+    "short": "Silla con soporte lumbar ajustable",
+    "description": "Silla ergonómica pensada para largas jornadas frente al computador. Incluye soporte lumbar, ajuste de altura y respaldo cómodo.",
+    "image": "https://images.pexels.com/photos/4930091/pexels-photo-4930091.jpeg?cs=srgb&dl=pexels-diimejii-4930091.jpg&fm=jpg"
   },
   {
     "id": "mask-02",
-    "title": "Hydrating Overnight Mask",
+    "title": "Soporte Doble para Monitores",
     "price": 32.0,
-    "short": "Mascarilla hidratante nocturna",
-    "description": "Recupera hidratación mientras duermes.",
-    "image": "https://images.pexels.com/photos/26733176/pexels-photo-26733176.jpeg?cs=srgb&dl=pexels-vandana-vankhede-322740014-26733176.jpg&fm=jpg"
+    "short": "Brazo articulado para dos pantallas",
+    "description": "Soporte metálico articulado para dos monitores, con gestión de cables y ajustes de altura e inclinación. Ideal para setups productivos.",
+    "image": "https://images.pexels.com/photos/20263137/pexels-photo-20263137.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-20263137.jpg&fm=jpg"
   },
   {
     "id": "oil-01",
-    "title": "Rosehip Regenerating Oil",
+    "title": "Lámpara LED de Escritorio",
     "price": 35.0,
-    "short": "Aceite regenerante de rosa mosqueta",
-    "description": "Reduce cicatrices y mejora textura.",
-    "image": "https://images.pexels.com/photos/8076097/pexels-photo-8076097.jpeg?cs=srgb&dl=pexels-mart-production-8076097.jpg&fm=jpg"
+    "short": "Iluminación regulable para tu espacio de trabajo",
+    "description": "Lámpara LED con brillo y temperatura de color ajustables. Reduce la fatiga visual y mejora la iluminación de tu zona de estudio u oficina.",
+    "image": "https://images.pexels.com/photos/20263137/pexels-photo-20263137.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-20263137.jpg&fm=jpg"
   },
   {
     "id": "oil-02",
-    "title": "Squalane Lightweight Oil",
+    "title": "Alfombrilla XL para Ratón",
     "price": 33.0,
-    "short": "Aceite ligero de escualano",
-    "description": "Hidratación profunda sin sensación grasa.",
-    "image": "https://images.pexels.com/photos/8076097/pexels-photo-8076097.jpeg?cs=srgb&dl=pexels-mart-production-8076097.jpg&fm=jpg"
+    "short": "Mousepad extendido para teclado y mouse",
+    "description": "Alfombrilla de gran tamaño con superficie suave y base antideslizante. Cubre buena parte del escritorio y permite movimientos amplios del mouse.",
+    "image": "https://images.pexels.com/photos/28454825/pexels-photo-28454825.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-28454825.jpg&fm=jpg"
   }
 ]

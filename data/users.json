@@ -1,20 +1,14 @@
 [
   {
-    "id": "1764963960488",
-    "email": "liecastro@hotmail.com",
+    "id": "1764967174699",
+    "email": "ana@gmail.com",
     "password": "123456",
-    "name": "Lie Castro"
+    "name": "ana"
   },
   {
-    "id": "1764965362147",
-    "email": "Maria@gmail.com",
-    "password": "123456",
-    "name": "Maria"
-  },
-  {
-    "id": "1764965625397",
-    "email": "maria@gmail.com",
-    "password": "123456",
-    "name": "Maria"
+    "id": "1764967726165",
+    "email": "pedro@gmail.com",
+    "password": "12345679",
+    "name": "pedro"
   }
 ]
