@@ -3,47 +3,27 @@ import { useCart } from '../../context/CartContext'
 import products from '../../data/products.json'
 import Link from 'next/link'
 import { useState } from 'react'
-import { useAuth } from '../../hooks/useAuth'
 
 export default function ProductPage() {
   const router = useRouter()
   const { id } = router.query
-  const product = products.find(p => p.id === id)
   const { addToCart } = useCart()
   const [quantity, setQuantity] = useState(1)
   const [showSuccess, setShowSuccess] = useState(false)
-  const { user, loading } = useAuth()
 
-  if (loading) {
+  // Mientras Next prepara el parámetro dinámico
+  if (!id) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Cargando...</p>
+          <p className="text-gray-600">Cargando producto...</p>
         </div>
       </div>
     )
   }
 
-  if (!user) {
-    return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="text-center max-w-md px-4">
-          <div className="text-6xl mb-6">🔒</div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Acceso Restringido</h2>
-          <p className="text-gray-600 mb-8">
-            Debes iniciar sesión para ver los detalles de este producto
-          </p>
-          <Link 
-            href="/auth/signin" 
-            className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transition shadow-lg"
-          >
-            Iniciar Sesión
-          </Link>
-        </div>
-      </div>
-    )
-  }
+  const product = products.find(p => p.id === id)
 
   if (!product) return (
     <div className="text-center py-20">
@@ -82,7 +62,7 @@ export default function ProductPage() {
 
           {product.ingredients && (
             <div className="mb-6">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">Ingredientes Clave</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">Características Clave</h3>
               <div className="flex flex-wrap gap-2">
                 {product.ingredients.map((ing, i) => (
                   <span key={i} className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
@@ -124,7 +104,11 @@ export default function ProductPage() {
                 min="1"
                 max="99"
                 value={quantity}
-                onChange={(e) => setQuantity(Math.max(1, Math.min(99, parseInt(e.target.value) || 1)))}
+                onChange={(e) =>
+                  setQuantity(
+                    Math.max(1, Math.min(99, parseInt(e.target.value) || 1))
+                  )
+                }
                 className="w-20 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none"
               />
               <button
@@ -146,7 +130,12 @@ export default function ProductPage() {
           {showSuccess && (
             <div className="mb-4 bg-green-50 border-2 border-green-500 text-green-700 px-4 py-3 rounded-lg flex items-center gap-2 animate-pulse">
               <span className="text-xl">✓</span>
-              <span className="font-semibold">¡{quantity} {quantity === 1 ? 'producto agregado' : 'productos agregados'} al carrito!</span>
+              <span className="font-semibold">
+                ¡{quantity}{' '}
+                {quantity === 1
+                  ? 'producto agregado'
+                  : 'productos agregados'} al carrito!
+              </span>
             </div>
           )}
 
