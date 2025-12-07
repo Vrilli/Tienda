@@ -1,18 +1,28 @@
+// components/Navbar.js
 import Link from 'next/link'
 import { useCart } from '../context/CartContext'
-import { useAuth } from '../hooks/useAuth'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
   const { items } = useCart()
-  const { user, logout } = useAuth()
-  const count = items.reduce((s,i) => s + i.qty, 0)
+  const count = items.reduce((s, i) => s + i.qty, 0)
   const [menuOpen, setMenuOpen] = useState(false)
+  const router = useRouter()
+
+  const navLinks = [
+    { href: '/', label: 'Inicio' },
+    { href: '/sobre-mi', label: 'Sobre mí' },
+    { href: '/contactanos', label: 'Contáctanos' },
+    { href: '/cart', label: 'Carrito' },
+  ]
+
+  const isActive = (href) => router.pathname === href
 
   return (
     <nav className="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
       <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <Link 
             href="/" 
@@ -22,29 +32,29 @@ export default function Navbar() {
             <span className="text-blue-600">⚡</span> TechStore
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-3">
-            {!user && (
-              <Link 
-                href="/auth/signin" 
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition text-sm shadow-sm"
-              >
-                Iniciar Sesión
-              </Link>
-            )}
-            {user && (
-              <>
-                <span className="text-slate-600 text-sm font-medium max-w-[150px] truncate">
-                  👤 {user.name || user.email}
-                </span>
-                <button 
-                  onClick={logout} 
-                  className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition text-sm font-semibold border border-slate-200"
-                >
-                  Salir
-                </button>
-              </>
-            )}
+          {/* Menú + carrito (desktop) */}
+          <div className="hidden md:flex items-center gap-6">
+            {/* Links principales */}
+            <ul className="flex items-center gap-4 text-sm font-medium">
+              {navLinks
+                .filter(link => link.href !== '/cart') // en desktop, "Carrito" va como botón aparte
+                .map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`px-3 py-1 rounded-full transition ${
+                        isActive(link.href)
+                          ? 'bg-blue-600 text-white shadow-sm'
+                          : 'text-slate-700 hover:bg-slate-100'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+              ))}
+            </ul>
+
+            {/* Carrito */}
             <Link 
               href="/cart" 
               className="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition flex items-center gap-2 text-sm relative shadow-sm"
@@ -58,7 +68,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button & Cart */}
+          {/* Carrito + botón menú (mobile) */}
           <div className="flex md:hidden items-center gap-2">
             <Link 
               href="/cart" 
@@ -87,34 +97,23 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Menú móvil */}
         {menuOpen && (
           <div className="md:hidden mt-3 pb-2 space-y-2 border-t border-slate-200 pt-3">
-            {!user && (
-              <Link 
-                href="/auth/signin" 
-                className="block w-full px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition text-center text-sm shadow-sm"
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`block w-full px-4 py-2 rounded-lg text-sm font-medium text-left ${
+                  isActive(link.href)
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-700 bg-slate-50 hover:bg-slate-100'
+                }`}
                 onClick={() => setMenuOpen(false)}
               >
-                Iniciar Sesión
+                {link.label}
               </Link>
-            )}
-            {user && (
-              <>
-                <div className="px-4 py-2 text-slate-600 text-sm font-medium bg-slate-100 rounded-lg text-center border border-slate-200">
-                  👤 {user.name || user.email}
-                </div>
-                <button 
-                  onClick={() => {
-                    logout()
-                    setMenuOpen(false)
-                  }} 
-                  className="block w-full px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition text-sm font-semibold border border-slate-200"
-                >
-                  Cerrar Sesión
-                </button>
-              </>
-            )}
+            ))}
           </div>
         )}
       </div>

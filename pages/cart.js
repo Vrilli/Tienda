@@ -1,14 +1,13 @@
+// pages/cart.js (o donde tengas este componente)
 import { useCart } from '../context/CartContext'
 import { useState } from 'react'
 import Link from 'next/link'
-import { useAuth } from '../hooks/useAuth'
 
 export default function CartPage() {
   const { items, updateQty, removeFromCart, total, clearCart } = useCart()
   const [loading, setLoading] = useState(false)
   const [showPaymentSuccess, setShowPaymentSuccess] = useState(false)
   const [orderNumber, setOrderNumber] = useState('')
-  const { user, loading: authLoading } = useAuth()
 
   async function checkout() {
     setLoading(true)
@@ -27,37 +26,6 @@ export default function CartPage() {
     setTimeout(() => {
       clearCart()
     }, 5000)
-  }
-
-  if (authLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Cargando...</p>
-        </div>
-      </div>
-    )
-  }
-
-  if (!user) {
-    return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="text-center max-w-md">
-          <div className="text-6xl mb-6">🔒</div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Acceso Restringido</h2>
-          <p className="text-gray-600 mb-8">
-            Debes iniciar sesión para acceder a tu carrito de compras
-          </p>
-          <Link 
-            href="/auth/signin" 
-            className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transition shadow-lg"
-          >
-            Iniciar Sesión
-          </Link>
-        </div>
-      </div>
-    )
   }
 
   // Modal de Pago Exitoso
@@ -115,16 +83,21 @@ export default function CartPage() {
     )
   }
 
-  if (items.length === 0) return (
-    <div className="text-center py-20">
-      <div className="text-6xl mb-4">🛒</div>
-      <h2 className="text-2xl font-bold text-gray-800 mb-2">Tu carrito está vacío</h2>
-      <p className="text-gray-600 mb-6">¡Descubre nuestros productos increíbles!</p>
-      <Link href="/" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transition inline-block">
-        Ir a la tienda
-      </Link>
-    </div>
-  )
+  if (items.length === 0) {
+    return (
+      <div className="text-center py-20">
+        <div className="text-6xl mb-4">🛒</div>
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">Tu carrito está vacío</h2>
+        <p className="text-gray-600 mb-6">¡Descubre nuestros productos increíbles!</p>
+        <Link 
+          href="/" 
+          className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transition inline-block"
+        >
+          Ir a la tienda
+        </Link>
+      </div>
+    )
+  }
 
   return (
     <div className="max-w-4xl mx-auto">
